@@ -1,0 +1,8 @@
+This is a kubernetes service that runs in a pod and listens on port 80.
+When the service is queried, it lists the nodes in a kubernetes cluster
+in descneding order by number of pods running.
+
+To build and package the app as a docker container, execute the following:
+
+$ GOOS=linux go build -o app k8s-nodes-svc.go
+$ docker build -t nodes-svc .
